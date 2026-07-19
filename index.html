@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kazandré Fashion Store | Moda y Estilo en Cartagena</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    :root {
+      --brand-green: #0A4329;
+      --brand-green-dark: #062c1b;
+      --brand-gold: #D4AF37;
+      --brand-gold-light: #F7E7C4;
+      --text-dark: #212529;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-dark);
+      background-color: #fcfcfc;
+    }
+
+    /* Navegación y Encabezados */
+    .navbar {
+      background-color: var(--brand-green);
+      border-bottom: 3px solid var(--brand-gold);
+    }
+    
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+      font-weight: 600;
+    }
+    
+    .nav-link:hover {
+      color: var(--brand-gold) !important;
+    }
+
+    /* Sección Hero */
+    .hero-section {
+      background: linear-gradient(135deg, var(--brand-green-dark) 0%, var(--brand-green) 100%);
+      color: white;
+      padding: 80px 0;
+      border-bottom: 5px solid var(--brand-gold);
+    }
+    
+    .text-gold {
+      color: var(--brand-gold);
+    }
+
+    /* Botones Personalizados */
+    .btn-gold {
+      background-color: var(--brand-gold);
+      color: var(--brand-green-dark);
+      font-weight: bold;
+      border: none;
+      padding: 12px 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-gold:hover {
+      background-color: #e6c555;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .btn-whatsapp:hover {
+      background-color: #1ebd5a;
+      color: white;
+    }
+
+    /* Tarjetas de Productos */
+    .card-custom {
+      border: 1px solid rgba(10, 67, 41, 0.1);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .card-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(10, 67, 41, 0.15);
+    }
+
+    .card-header-custom {
+      background-color: var(--brand-green);
+      color: var(--brand-gold);
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Sección de Políticas y Ubicación */
+    .info-box {
+      background-color: var(--brand-gold-light);
+      border-left: 5px solid var(--brand-green);
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    /* Pie de página */
+    footer {
+      background-color: var(--brand-green-dark);
+      color: white;
+      border-top: 3px solid var(--brand-gold);
+      padding: 40px 0 20px;
+    }
+    
+    footer a {
+      color: var(--brand-gold);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fs-3" href="#">
+        <i class="bi bi-gem me-2 text-gold"></i>Kazandré <span class="fs-6 text-gold d-block d-sm-inline">FASHION STORE</span>
+      </a>
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="bi bi-list fs-1 text-gold"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#colecciones">Colecciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ubicacion">Punto de Entrega</a></li>
+          <li class="nav-item"><a class="nav-link" href="#politicas">Políticas</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-whatsapp rounded-pill px-4 mt-2 mt-lg-0" href="https://wa.me/573168186050" target="_blank">
+              <i class="bi bi-whatsapp me-1"></i> Comprar ahora
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección Hero / Portada -->
+  <header id="inicio" class="hero-section text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold mb-3">Estilo y Elegancia para Toda la Familia</h1>
+          <p class="lead mb-4">Descubre nuestra exclusiva colección de prendas y accesorios para niñas, niños y caballeros. Calidad, diseño y comodidad en un solo lugar.</p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a href="#colecciones" class="btn btn-gold btn-lg rounded-pill shadow">Ver Colecciones</a>
+            <a href="https://wa.me/573234885708" target="_blank" class="btn btn-outline-light btn-lg rounded-pill">
+              <i class="bi bi-telephone-fill me-2"></i>Asesoría Personalizada
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Colecciones Principal -->
+  <section id="colecciones" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: var(--brand-green);">Nuestras Líneas de Moda</h2>
+        <div class="mx-auto" style="width: 80px; height: 3px; background-color: var(--brand-gold);"></div>
+        <p class="text-muted mt-2">Encuentra el atuendo perfecto para cada ocasión</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Tarjeta Niñas -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card card-custom h-100 shadow-sm">
+            <div class="card-header-custom"><i class="bi bi-stars me-2"></i>Moda Niñas</div>
+            <div class="card-body text-center p-4 d-flex flex-column justify-content-between">
+              <div>
+                <i class="bi bi-heart-fill text-danger fs-1 mb-3"></i>
+                <h5 class="card-title fw-bold">Vestidos & Conjuntos</h5>
+                <p class="card-text text-muted small">Hermosos vestidos florales, elegantes atuendos de gala y conjuntos casuales llenos de color y dulzura.</p>
+              </div>
+              <a href="https://wa.me/573168186050?text=Hola,%20deseo%20ver%20el%20catálogo%20de%20niñas" target="_blank" class="btn btn-outline-dark rounded-pill mt-3 w-100">Consultar Tallas</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Niños -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card card-custom h-100 shadow-sm">
+            <div class="card-header-custom"><i class="bi bi-lightning-charge-fill me-2"></i>Moda Niños</div>
+            <div class="card-body text-center p-4 d-flex flex-column justify-content-between">
+              <div>
+                <i class="bi bi-shield-fill-check text-primary fs-1 mb-3"></i>
+                <h5 class="card-title fw-bold">Estilo & Comodidad</h5>
+                <p class="card-text text-muted small">Camisas, bermudas y conjuntos resistentes diseñados para que jueguen y luzcan increíbles en todo momento.</p>
+              </div>
+              <a href="https://wa.me/573168186050?text=Hola,%20deseo%20ver%20el%20catálogo%20de%20niños" target="_blank" class="btn btn-outline-dark rounded-pill mt-3 w-100">Consultar Tallas</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Hombres -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card card-custom h-100 shadow-sm">
+            <div class="card-header-custom"><i class="bi bi-person-fill me-2"></i>Caballeros</div>
+            <div class="card-body text-center p-4 d-flex flex-column justify-content-between">
+              <div>
+                <i class="bi bi-briefcase-fill text-success fs-1 mb-3"></i>
+                <h5 class="card-title fw-bold">Casual & Urbano</h5>
+                <p class="card-text text-muted small">Bermudas tipo chino, cinturones de cuero, polos y prendas versátiles para el hombre moderno.</p>
+              </div>
+              <a href="https://wa.me/573168186050?text=Hola,%20deseo%20ver%20el%20catálogo%20de%20caballeros" target="_blank" class="btn btn-outline-dark rounded-pill mt-3 w-100">Consultar Tallas</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Accesorios -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card card-custom h-100 shadow-sm">
+            <div class="card-header-custom"><i class="bi bi-gem me-2"></i>Joyería & Accesorios</div>
+            <div class="card-body text-center p-4 d-flex flex-column justify-content-between">
+              <div>
+                <i class="bi bi-ring text-warning fs-1 mb-3"></i>
+                <h5 class="card-title fw-bold">Toques Exclusivos</h5>
+                <p class="card-text text-muted small">Finos collares, anillos, tocados infantiles y complementos perfectos para realzar cualquier look.</p>
+              </div>
+              <a href="https://wa.me/573168186050?text=Hola,%20deseo%20ver%20los%20accesorios%20y%20joyería" target="_blank" class="btn btn-outline-dark rounded-pill mt-3 w-100">Ver Catálogo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Ubicación y Punto de Entrega -->
+  <section id="ubicacion" class="py-5 bg-light">
+    <div class="container py-3">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <span class="badge bg-success mb-2 px-3 py-2">Atención Presencial y Domicilios</span>
+          <h2 class="fw-bold" style="color: var(--brand-green);">Nuestro Punto de Entrega</h2>
+          <p class="lead text-muted">¿Estás en Cartagena de Indias? Puedes pasar a recoger tus pedidos directamente en nuestro punto físico o solicitar servicio a domicilio.</p>
+          
+          <div class="info-box my-4 shadow-sm">
+            <h5 class="fw-bold mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i>Dirección Exacta:</h5>
+            <p class="mb-1 fs-5">El Socorro Mz 25 Lote 17 <strong>(Techo Rojo)</strong></p>
+            <p class="mb-0 text-muted">Cartagena de Indias, Colombia</p>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://wa.me/573168186050" target="_blank" class="btn btn-whatsapp px-4 py-2">
+              <i class="bi bi-whatsapp me-2"></i>Línea 1: 316 818 6050
+            </a>
+            <a href="https://wa.me/573234885708" target="_blank" class="btn btn-outline-dark px-4 py-2">
+              <i class="bi bi-telephone me-2"></i>Línea 2: 323 488 5708
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="p-4 rounded-4 shadow" style="background-color: var(--brand-green); color: white;">
+            <i class="bi bi-bag-check-fill display-1 text-gold mb-3"></i>
+            <h3 class="fw-bold">¿Cómo comprar?</h3>
+            <ul class="list-unstyled text-start mx-auto mt-3" style="max-width: 400px;">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> 1. Elige tu prenda o talla favorita.</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> 2. Escríbenos por WhatsApp para verificar stock.</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> 3. Coordina el pago y método de entrega.</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> 4. ¡Recibe en casa o en nuestro punto de entrega!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Políticas -->
+  <section id="politicas" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: var(--brand-green);">Políticas de Compra y Garantía</h2>
+        <div class="mx-auto" style="width: 80px; height: 3px; background-color: var(--brand-gold);"></div>
+        <p class="text-muted mt-2">Transparencia y confianza en cada una de tus adquisiciones</p>
+      </div>
+
+      <div class="accordion shadow-sm" id="accordionPoliticas">
+        <!-- Política de Envíos -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUno">
+              <i class="bi bi-truck me-2 text-success"></i> 1. Políticas de Envío y Entregas
+            </button>
+          </h2>
+          <div id="collapseUno" class="accordion-collapse collapse show" data-bs-parent="#accordionPoliticas">
+            <div class="accordion-body">
+              <ul>
+                <li><strong>Recogida en Punto de Entrega:</strong> Puedes recoger tu pedido sin costo adicional en el Socorro Mz 25 Lote 17 (Techo Rojo), Cartagena, acordando previamente la hora de entrega por WhatsApp.</li>
+                <li><strong>Domicilios Locales (Cartagena):</strong> Los envíos a domicilio tienen un tiempo de entrega de 24 a 48 horas hábiles. El valor del domicilio depende de la zona de cobertura.</li>
+                <li><strong>Envíos Nacionales:</strong> Realizamos despachos a toda Colombia a través de empresas de mensajería reconocidas. El costo del flete es asumido por el comprador y el tiempo de llegada depende de la transportadora (3 a 5 días hábiles).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Política de Cambios -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDos">
+              <i class="bi bi-arrow-repeat me-2 text-primary"></i> 2. Políticas de Cambios y Devoluciones
+            </button>
+          </h2>
+          <div id="collapseDos" class="accordion-collapse collapse" data-bs-parent="#accordionPoliticas">
+            <div class="accordion-body">
+              <ul>
+                <li><strong>Plazo para Cambios:</strong> Tienes un plazo máximo de <strong>5 días calendario</strong> a partir de la recepción del producto para solicitar un cambio por talla o color.</li>
+                <li><strong>Condiciones de la Prenda:</strong> La ropa o accesorio debe encontrarse en perfecto estado, sin uso, sin lavados, sin olores y con todas sus etiquetas y empaque original.</li>
+                <li><strong>Costos de Transporte:</strong> Los costos de envío generados por cambios de talla o preferencia corren por cuenta del cliente. Si el cambio obedece a un error de envío por parte de Kazandré Fashion Store, nosotros asumimos el costo.</li>
+                <li><em>Nota:</em> Por motivos de higiene, la joyería y los accesorios de uso personal no tienen cambio a menos que presenten defectos de fábrica visibles al momento de la entrega.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Política de Garantías -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTres">
+              <i class="bi bi-shield-check me-2 text-warning"></i> 3. Garantía de Calidad
+            </button>
+          </h2>
+          <div id="collapseTres" class="accordion-collapse collapse" data-bs-parent="#accordionPoliticas">
+            <div class="accordion-body">
+              <ul>
+                <li><strong>Cobertura:</strong> Ofrecemos una garantía de <strong>30 días calendario</strong> en prendas de vestir por defectos de fabricación (follas en costuras, cierres o decoloración inusual del tejido sin uso de químicos).</li>
+                <li><strong>Exclusiones:</strong> La garantía no cubre daños ocasionados por mal lavado, uso de blanqueadores o abrasivos, planchado a temperaturas incorrectas, rasgones por accidentes o el desgaste natural por uso.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer class="text-center text-md-start">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mb-4">
+          <h4 class="text-gold fw-bold">Kazandré Fashion Store</h4>
+          <p class="text-light-50 small">Vistiendo con elegancia y estilo a los más pequeños y a los caballeros de hoy. Calidad garantizada en cada costura.</p>
+          <div class="d-flex gap-3 mt-3 justify-content-center justify-content-md-start">
+            <a href="https://www.facebook.com/" target="_blank" class="fs-4"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/kazandrefashion" target="_blank" class="fs-4"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <h5 class="text-gold mb-3">Contacto Directo</h5>
+          <p class="mb-1"><i class="bi bi-whatsapp text-success me-2"></i>316 818 6050</p>
+          <p class="mb-1"><i class="bi bi-telephone text-success me-2"></i>323 488 5708</p>
+          <p class="mb-0"><i class="bi bi-geo-alt text-danger me-2"></i>El Socorro Mz 25 Lote 17, Cartagena</p>
+        </div>
+        
+        <div class="col-md-3 mb-4">
+          <h5 class="text-gold mb-3">Redes Sociales</h5>
+          <p class="small mb-2">Encuéntranos en Facebook e Instagram para ver nuestras novedades diarias:</p>
+          <span class="badge bg-dark border border-warning text-gold p-2 fs-6">@kazandrefashion</span>
+        </div>
+      </div>
+      <hr class="border-secondary mt-2">
+      <div class="text-center text-muted small pt-2">
+        &copy; 2026 Kazandré Fashion Store. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
