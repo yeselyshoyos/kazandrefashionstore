@@ -1,389 +1,566 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kazandre Fashon Store | Moda y Estilo en Cartagena</title>
-  <!-- Bootstrap 5 CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  
-  <style>
-    :root {
-      --brand-green: #0A4329;
-      --brand-green-dark: #062c1b;
-      --brand-gold: #D4AF37;
-      --brand-gold-light: #F7E7C4;
-      --text-dark: #212529;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-dark);
-      background-color: #fcfcfc;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentiaCare | Centro Odontológico & Tecnología</title>
+    <style>
+        :root {
+            --primary-color: #00668c;
+            --secondary-color: #38b09d;
+            --accent-color: #25D366; /* WhatsApp Green */
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
 
-    /* Navegación y Encabezados */
-    .navbar {
-      background-color: var(--brand-green);
-      border-bottom: 3px solid var(--brand-gold);
-    }
-    
-    .navbar-brand, .nav-link {
-      color: #ffffff !important;
-      font-weight: 600;
-    }
-    
-    .nav-link:hover {
-      color: var(--brand-gold) !important;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
 
-    /* Sección Hero */
-    .hero-section {
-      background: linear-gradient(135deg, var(--brand-green-dark) 0%, var(--brand-green) 100%);
-      color: white;
-      padding: 80px 0;
-      border-bottom: 5px solid var(--brand-gold);
-    }
-    
-    .text-gold {
-      color: var(--brand-gold);
-    }
+        body {
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
 
-    /* Botones Personalizados */
-    .btn-gold {
-      background-color: var(--brand-gold);
-      color: var(--brand-green-dark);
-      font-weight: bold;
-      border: none;
-      padding: 12px 30px;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-gold:hover {
-      background-color: #e6c555;
-      color: #000;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .btn-whatsapp {
-      background-color: #25D366;
-      color: white;
-      font-weight: bold;
-    }
-    
-    .btn-whatsapp:hover {
-      background-color: #1ebd5a;
-      color: white;
-    }
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Tarjetas de Productos */
-    .card-custom {
-      border: 1px solid rgba(10, 67, 41, 0.1);
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      overflow: hidden;
-    }
-    
-    .card-custom:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(10, 67, 41, 0.15);
-    }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .card-header-custom {
-      background-color: var(--brand-green);
-      color: var(--brand-gold);
-      font-weight: bold;
-      text-align: center;
-      padding: 15px;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
 
-    /* Sección de Políticas y Ubicación */
-    .info-box {
-      background-color: var(--brand-gold-light);
-      border-left: 5px solid var(--brand-green);
-      padding: 20px;
-      border-radius: 5px;
-    }
+        .logo span {
+            color: var(--secondary-color);
+        }
 
-    /* Pie de página */
-    footer {
-      background-color: var(--brand-green-dark);
-      color: white;
-      border-top: 3px solid var(--brand-gold);
-      padding: 40px 0 20px;
-    }
-    
-    footer a {
-      color: var(--brand-gold);
-      text-decoration: none;
-    }
-  </style>
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #004d6a;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1fbe5b;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #d1fae5 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e0f2fe;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Tech Section */
+        .tech-section {
+            background-color: var(--bg-light);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .tech-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tech-text h2 {
+            font-size: 2.25rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .tech-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .tech-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .tech-features li::before {
+            content: "✓";
+            color: var(--secondary-color);
+            font-weight: bold;
+            background: #d1fae5;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.95rem;
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #1e293b;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Barra de Navegación -->
-  <nav class="navbar navbar-expand-lg sticky-top shadow">
-    <div class="container">
-      <a class="navbar-brand fs-3" href="#">
-        <i class="bi bi-gem me-2 text-gold"></i>Kazandre <span class="fs-6 text-gold d-block d-sm-inline">FASHON STORE</span>
-      </a>
-      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <i class="bi bi-list fs-1 text-gold"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#colecciones">Colecciones</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ubicacion">Punto de Entrega</a></li>
-          <li class="nav-item"><a class="nav-link" href="#politicas">Políticas</a></li>
-          <li class="nav-item ms-lg-3">
-            <a class="btn btn-whatsapp rounded-pill px-4 mt-2 mt-lg-0" href="https://wa.me/573168186050" target="_blank">
-              <i class="bi bi-whatsapp me-1"></i> Comprar ahora
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Sección Hero / Portada -->
-  <header id="inicio" class="hero-section text-center">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h1 class="display-4 fw-bold mb-3">Estilo y Elegancia para Toda la Familia</h1>
-          <p class="lead mb-4">Descubre nuestra exclusiva colección de prendas y accesorios para niñas, niños y caballeros. Calidad, diseño y comodidad en un solo lugar.</p>
-          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-            <a href="#colecciones" class="btn btn-gold btn-lg rounded-pill shadow">Ver Colecciones</a>
-            <a href="https://wa.me/573234885708" target="_blank" class="btn btn-outline-light btn-lg rounded-pill">
-              <i class="bi bi-telephone-fill me-2"></i>Asesoría Personalizada
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Colecciones Principal -->
-  <section id="colecciones" class="py-5">
-    <div class="container py-4">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: var(--brand-green);">Nuestras Líneas de Moda</h2>
-        <div class="mx-auto" style="width: 80px; height: 3px; background-color: var(--brand-gold);"></div>
-        <p class="text-muted mt-2">Encuentra el atuendo perfecto para cada ocasión</p>
-      </div>
-
-      <div class="row g-4">
-        <!-- Tarjeta Niñas -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-custom h-100 shadow-sm">
-            <div class="card-header-custom"><i class="bi bi-stars me-2"></i>Moda Niñas</div>
-            <div class="card-body text-center p-4 d-flex flex-column justify-content-between">
-              <div>
-                <i class="bi bi-heart-fill text-danger fs-1 mb-3"></i>
-                <h5 class="card-title fw-bold">Vestidos & Conjuntos</h5>
-                <p class="card-text text-muted small">Hermosos vestidos florales, elegantes atuendos de gala y conjuntos casuales llenos de color y dulzura.</p>
-              </div>
-              <a href="https://wa.me/573168186050?text=Hola,%20deseo%20ver%20el%20catálogo%20de%20niñas" target="_blank" class="btn btn-outline-dark rounded-pill mt-3 w-100">Consultar Tallas</a>
+    <header>
+        <nav>
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.5 2 6 4.5 5 7C4 9.5 4 13 5 16C5.8 18.4 7 22 9 22C10.5 22 11 19 12 19C13 19 13.5 22 15 22C17 22 18.2 18.4 19 16C20 13 20 9.5 19 7C18 4.5 15.5 2 12 2Z" stroke="#00668c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 7C8 7 9.5 6 12 6C14.5 6 16 7 16 7" stroke="#38b09d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Dentia<span>Care</span>
             </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta Niños -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-custom h-100 shadow-sm">
-            <div class="card-header-custom"><i class="bi bi-lightning-charge-fill me-2"></i>Moda Niños</div>
-            <div class="card-body text-center p-4 d-flex flex-column justify-content-between">
-              <div>
-                <i class="bi bi-shield-fill-check text-primary fs-1 mb-3"></i>
-                <h5 class="card-title fw-bold">Estilo & Comodidad</h5>
-                <p class="card-text text-muted small">Camisas, bermudas y conjuntos resistentes diseñados para que jueguen y luzcan increíbles en todo momento.</p>
-              </div>
-              <a href="https://wa.me/573168186050?text=Hola,%20deseo%20ver%20el%20catálogo%20de%20niños" target="_blank" class="btn btn-outline-dark rounded-pill mt-3 w-100">Consultar Tallas</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta Hombres -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-custom h-100 shadow-sm">
-            <div class="card-header-custom"><i class="bi bi-person-fill me-2"></i>Caballeros</div>
-            <div class="card-body text-center p-4 d-flex flex-column justify-content-between">
-              <div>
-                <i class="bi bi-briefcase-fill text-success fs-1 mb-3"></i>
-                <h5 class="card-title fw-bold">Casual & Urbano</h5>
-                <p class="card-text text-muted small">Bermudas tipo chino, cinturones de cuero, polos y prendas versátiles para el hombre moderno.</p>
-              </div>
-              <a href="https://wa.me/573168186050?text=Hola,%20deseo%20ver%20el%20catálogo%20de%20caballeros" target="_blank" class="btn btn-outline-dark rounded-pill mt-3 w-100">Consultar Tallas</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta Accesorios -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-custom h-100 shadow-sm">
-            <div class="card-header-custom"><i class="bi bi-gem me-2"></i>Joyería & Accesorios</div>
-            <div class="card-body text-center p-4 d-flex flex-column justify-content-between">
-              <div>
-                <i class="bi bi-ring text-warning fs-1 mb-3"></i>
-                <h5 class="card-title fw-bold">Toques Exclusivos</h5>
-                <p class="card-text text-muted small">Finos collares, anillos, tocados infantiles y complementos perfectos para realzar cualquier look.</p>
-              </div>
-              <a href="https://wa.me/573168186050?text=Hola,%20deseo%20ver%20los%20accesorios%20y%20joyería" target="_blank" class="btn btn-outline-dark rounded-pill mt-3 w-100">Ver Catálogo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección Ubicación y Punto de Entrega -->
-  <section id="ubicacion" class="py-5 bg-light">
-    <div class="container py-3">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <span class="badge bg-success mb-2 px-3 py-2">Atención Presencial y Domicilios</span>
-          <h2 class="fw-bold" style="color: var(--brand-green);">Nuestro Punto de Entrega</h2>
-          <p class="lead text-muted">¿Estás en Cartagena de Indias? Puedes pasar a recoger tus pedidos directamente en nuestro punto físico o solicitar servicio a domicilio.</p>
-          
-          <div class="info-box my-4 shadow-sm">
-            <h5 class="fw-bold mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i>Dirección Exacta:</h5>
-            <p class="mb-1 fs-5">El Socorro Mz 25 Lote 17 <strong>(Techo Rojo)</strong></p>
-            <p class="mb-0 text-muted">Cartagena de Indias, Colombia</p>
-          </div>
-
-          <div class="d-flex flex-wrap gap-2">
-            <a href="https://wa.me/573168186050" target="_blank" class="btn btn-whatsapp px-4 py-2">
-              <i class="bi bi-whatsapp me-2"></i>Línea 1: 316 818 6050
-            </a>
-            <a href="https://wa.me/573234885708" target="_blank" class="btn btn-outline-dark px-4 py-2">
-              <i class="bi bi-telephone me-2"></i>Línea 2: 323 488 5708
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-6 text-center">
-          <div class="p-4 rounded-4 shadow" style="background-color: var(--brand-green); color: white;">
-            <i class="bi bi-bag-check-fill display-1 text-gold mb-3"></i>
-            <h3 class="fw-bold">¿Cómo comprar?</h3>
-            <ul class="list-unstyled text-start mx-auto mt-3" style="max-width: 400px;">
-              <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> 1. Elige tu prenda o talla favorita.</li>
-              <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> 2. Escríbenos por WhatsApp para verificar stock.</li>
-              <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> 3. Coordina el pago y método de entrega.</li>
-              <li class="mb-2"><i class="bi bi-check-circle-fill text-gold me-2"></i> 4. ¡Recibe en casa o en nuestro punto de entrega!</li>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios Clínicos</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#tecnologia">Experiencia Digital</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <a href="https://wa.me/573000000000?text=Hola%20DentiaCare,%20quisiera%20agendar%20una%20cita%20de%20valoraci%C3%B3n." target="_blank" class="btn btn-whatsapp">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.131.559 4.137 1.547 5.88l-1.644 6 6.136-1.609c1.688.921 3.616 1.449 5.674 1.449 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+                Agendar Cita
+            </a>
+        </nav>
+    </header>
 
-  <!-- Sección Políticas -->
-  <section id="politicas" class="py-5">
-    <div class="container py-4">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: var(--brand-green);">Políticas de Compra y Garantía</h2>
-        <div class="mx-auto" style="width: 80px; height: 3px; background-color: var(--brand-gold);"></div>
-        <p class="text-muted mt-2">Transparencia y confianza en cada una de tus adquisiciones</p>
-      </div>
-
-      <div class="accordion shadow-sm" id="accordionPoliticas">
-        <!-- Política de Envíos -->
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUno">
-              <i class="bi bi-truck me-2 text-success"></i> 1. Políticas de Envío y Entregas
-            </button>
-          </h2>
-          <div id="collapseUno" class="accordion-collapse collapse show" data-bs-parent="#accordionPoliticas">
-            <div class="accordion-body">
-              <ul>
-                <li><strong>Recogida en Punto de Entrega:</strong> Puedes recoger tu pedido sin costo adicional en el Socorro Mz 25 Lote 17 (Techo Rojo), Cartagena, acordando previamente la hora de entrega por WhatsApp.</li>
-                <li><strong>Domicilios Locales (Cartagena):</strong> Los envíos a domicilio tienen un tiempo de entrega de 24 a 48 horas hábiles. El valor del domicilio depende de la zona de cobertura.</li>
-                <li><strong>Envíos Nacionales:</strong> Realizamos despachos a toda Colombia a través de empresas de mensajería reconocidas. El costo del flete es asumido por el comprador y el tiempo de llegada depende de la transportadora (3 a 5 días hábiles).</li>
-              </ul>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Innovación y Calidez para tu Sonrisa</h1>
+            <p>Atención odontológica integral impulsada por tecnología de vanguardia. Agendamiento rápido, seguimiento automatizado y un equipo clínico comprometido con tu salud oral.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/573000000000?text=Hola%20DentiaCare,%20quisiera%20agendar%20una%20cita%20de%20valoraci%C3%B3n." target="_blank" class="btn btn-whatsapp">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.131.559 4.137 1.547 5.88l-1.644 6 6.136-1.609c1.688.921 3.616 1.449 5.674 1.449 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+                    Chatear por WhatsApp
+                </a>
+                <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
             </div>
-          </div>
         </div>
-
-        <!-- Política de Cambios -->
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDos">
-              <i class="bi bi-arrow-repeat me-2 text-primary"></i> 2. Políticas de Cambios y Devoluciones
-            </button>
-          </h2>
-          <div id="collapseDos" class="accordion-collapse collapse" data-bs-parent="#accordionPoliticas">
-            <div class="accordion-body">
-              <ul>
-                <li><strong>Plazo para Cambios:</strong> Tienes un plazo máximo de <strong>5 días calendario</strong> a partir de la recepción del producto para solicitar un cambio por talla o color.</li>
-                <li><strong>Condiciones de la Prenda:</strong> La ropa o accesorio debe encontrarse en perfecto estado, sin uso, sin lavados, sin olores y con todas sus etiquetas y empaque original.</li>
-                <li><strong>Costos de Transporte:</strong> Los costos de envío generados por cambios de talla o preferencia corren por cuenta del cliente. Si el cambio obedece a un error de envío por parte de Kazandre Fashon Store, nosotros asumimos el costo.</li>
-                <li><em>Nota:</em> Por motivos de higiene, la joyería y los accesorios de uso personal no tienen cambio a menos que presenten defectos de fábrica visibles al momento de la entrega.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Política de Garantías -->
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTres">
-              <i class="bi bi-shield-check me-2 text-warning"></i> 3. Garantía de Calidad
-            </button>
-          </h2>
-          <div id="collapseTres" class="accordion-collapse collapse" data-bs-parent="#accordionPoliticas">
-            <div class="accordion-body">
-              <ul>
-                <li><strong>Cobertura:</strong> Ofrecemos una garantía de <strong>30 días calendario</strong> en prendas de vestir por defectos de fabricación (follas en costuras, cierres o decoloración inusual del tejido sin uso de químicos).</li>
-                <li><strong>Exclusiones:</strong> La garantía no cubre daños ocasionados por mal lavado, uso de blanqueadores o abrasivos, planchado a temperaturas incorrectas, rasgones por accidentes o el desgaste natural por uso.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Pie de Página -->
-  <footer class="text-center text-md-start">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5 mb-4">
-          <h4 class="text-gold fw-bold">Kazandre Fashon Store</h4>
-          <p class="text-light-50 small">Vistiendo con elegancia y estilo a los más pequeños y a los caballeros de hoy. Calidad garantizada en cada costura.</p>
-          <div class="d-flex gap-3 mt-3 justify-content-center justify-content-md-start">
-            <a href="https://www.facebook.com/" target="_blank" class="fs-4"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/kazandrefashion" target="_blank" class="fs-4"><i class="bi bi-instagram"></i></a>
-          </div>
+    <section id="servicios">
+        <div class="section-header">
+            <h2>Nuestros Servicios Clínicos</h2>
+            <p>Tratamientos personalizados con equipos de última generación para garantizar comodidad y resultados estéticos perfectos.</p>
         </div>
-        
-        <div class="col-md-4 mb-4">
-          <h5 class="text-gold mb-3">Contacto Directo</h5>
-          <p class="mb-1"><i class="bi bi-whatsapp text-success me-2"></i>316 818 6050</p>
-          <p class="mb-1"><i class="bi bi-telephone text-success me-2"></i>323 488 5708</p>
-          <p class="mb-0"><i class="bi bi-geo-alt text-danger me-2"></i>El Socorro Mz 25 Lote 17, Cartagena</p>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="card-icon">🦷</div>
+                    <h3>Valoración & Diagnóstico 3D</h3>
+                    <p>Consulta inicial exhaustiva con radiografía digital de baja radiación y escaneo intraoral para un diagnóstico preciso.</p>
+                </div>
+                <div>
+                    <div class="price">Desde $80.000 COP</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20deseo%20agendar%20una%20Valoraci%C3%B3n%20y%20Diagn%C3%B3stico." target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Solicitar Cita</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-icon">✨</div>
+                    <h3>Limpieza Ultrasónica</h3>
+                    <p>Profilaxis profunda con tecnología de ultrasonido y aeropulidor para eliminar sarro, placa bacteriana y manchas superficiales.</p>
+                </div>
+                <div>
+                    <div class="price">$120.000 COP</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20deseo%20agendar%20una%20Limpieza%20Ultras%C3%B3nica." target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Solicitar Cita</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-icon">😁</div>
+                    <h3>Diseño de Sonrisa & Carillas</h3>
+                    <p>Armonización estética dental mediante carillas en resina de alta gama o cerámica, adaptadas a tu morfología facial.</p>
+                </div>
+                <div>
+                    <div class="price">Valoración Personalizada</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20Dise%C3%B1o%20de%20Sonrisa." target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Consultar Especialista</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-icon">📐</div>
+                    <h3>Ortodoncia Invisible</h3>
+                    <p>Alineación dental discreta y confortable utilizando alineadores transparentes removibles o brackets de autoligado.</p>
+                </div>
+                <div>
+                    <div class="price">Planes Financiados</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20me%20interesa%20la%20Ortodoncia%20Invisible." target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Iniciar Tratamiento</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-icon">🛡️</div>
+                    <h3>Implantología & Rehabilitación</h3>
+                    <p>Recupera la funcionalidad y estética de tu boca con implantes de titanio biocompatibles y coronas estéticas en zirconio.</p>
+                </div>
+                <div>
+                    <div class="price">Garantía Clínica</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20necesito%20informaci%C3%B3n%20sobre%20Implantes%20Dentales." target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Evaluación Implantes</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-icon">🚨</div>
+                    <h3>Urgencias Odontológicas</h3>
+                    <p>Atención prioritaria y rápida para dolor agudo, fracturas dentales, infecciones o imprevistos con tus tratamientos activos.</p>
+                </div>
+                <div>
+                    <div class="price">Atención Inmediata</div>
+                    <a href="https://wa.me/573000000000?text=Hola,%20tengo%20una%20URGENCIA%20dental." target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center;">Reportar Urgencia</a>
+                </div>
+            </div>
         </div>
-        
-        <div class="col-md-3 mb-4">
-          <h5 class="text-gold mb-3">Redes Sociales</h5>
-          <p class="small mb-2">Encuéntranos en Facebook e Instagram para ver nuestras novedades diarias:</p>
-          <span class="badge bg-dark border border-warning text-gold p-2 fs-6">@kazandrefashion</span>
+    </section>
+
+    <section id="productos" style="background-color: var(--bg-light); max-width: 100%; padding: 5rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-header">
+                <h2>Línea de Productos de Cuidado en Casa</h2>
+                <p>Prolonga los resultados de la clínica con nuestra gama especializada de productos de salud y estética oral.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <div class="card-icon" style="background-color: #d1fae5; color: var(--secondary-color);">🪥</div>
+                        <h3>Cepillo Sónico DentiaCare Pro</h3>
+                        <p>Cepillo recargable con 5 modos de vibración ultrasónica para una remoción de placa hasta 10 veces superior al cepillado manual.</p>
+                    </div>
+                    <div>
+                        <div class="price">$180.000 COP</div>
+                        <a href="https://wa.me/573000000000?text=Hola,%20quiero%20comprar%20el%20Cepillo%20S%C3%B3nico%20DentiaCare%20Pro." target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Comprar Ahora</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="card-icon" style="background-color: #d1fae5; color: var(--secondary-color);">💎</div>
+                        <h3>Kit de Blanqueamiento en Casa</h3>
+                        <p>Tratamiento supervisado por especialistas con cubetas personalizadas y gel desensibilizante de peróxido de carbamida.</p>
+                    </div>
+                    <div>
+                        <div class="price">$250.000 COP</div>
+                        <a href="https://wa.me/573000000000?text=Hola,%20quiero%20adquirir%20el%20Kit%20de%20Blanqueamiento." target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Pedir Kit</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="card-icon" style="background-color: #d1fae5; color: var(--secondary-color);">🌿</div>
+                        <h3>Mouthwash Cuidado Integral</h3>
+                        <p>Enjuague bucal terapéutico sin alcohol, enriquecido con xilitol, aloe vera y fluoruro para protección duradera de encías.</p>
+                    </div>
+                    <div>
+                        <div class="price">$35.000 COP</div>
+                        <a href="https://wa.me/573000000000?text=Hola,%20quiero%20pedir%20el%20Enjuague%20Bucal%20DentiaCare." target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">Comprar Ahora</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <hr class="border-secondary mt-2">
-      <div class="text-center text-muted small pt-2">
-        &copy; 2026 Kazandre Fashon Store. Todos los derechos reservados.
-      </div>
+    </section>
+
+    <div class="tech-section" id="tecnologia">
+        <div class="tech-container">
+            <div class="tech-text">
+                <h2>Experiencia 100% Conectada y Sin Esperas</h2>
+                <p>En <strong>DentiaCare</strong> combinamos la excelencia odontológica con un ecosistema tecnológico diseñado para tu comodidad. Gestiona todo tu tratamiento desde tu teléfono móvil.</p>
+                <ul class="tech-features">
+                    <li>Agendamiento y confirmación instantánea por WhatsApp</li>
+                    <li>Recordatorios automáticos de citas y control preventivo</li>
+                    <li>Historial clínico, radiografías y planes de tratamiento digitales</li>
+                    <li>Atención al paciente y soporte resolutivo y ágil</li>
+                </ul>
+                <a href="https://wa.me/573000000000?text=Hola%20DentiaCare,%20tengo%20una%20duda%20general." target="_blank" class="btn btn-whatsapp">Probar Asistente Digital en WhatsApp</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; text-align: center;">
+                <div style="background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow-lg); border: 2px solid #e2e8f0;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📱 + 🦷</div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Gestión Inteligente de Citas</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Nuestro sistema automatizado te permite modificar horarios, consultar instrucciones post-operatorias y recibir seguimiento en tiempo real de forma intuitiva.</p>
+                    <div style="background-color: #f1f5f9; padding: 1rem; border-radius: 12px; font-size: 0.85rem; color: var(--text-dark); text-align: left;">
+                        <strong>💬 Mensaje de WhatsApp:</strong><br>
+                        <em>"Hola, tu cita de profilaxis dental está programada para mañana a las 10:00 AM. ¿Deseas confirmar o reprogramar?"</em>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
 
-  <!-- Bootstrap 5 JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <span style="color: var(--white);">Dentia</span><span style="color: var(--secondary-color);">Care</span>
+                </div>
+                <p>Centro Odontológico Integral & Sistemas Digitales. Tecnología clínica al servicio de tu bienestar y estética dental.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#servicios">Servicios Odontológicos</a></li>
+                    <li><a href="#productos">Productos de Cuidado</a></li>
+                    <li><a href="#tecnologia">Nuestra Tecnología</a></li>
+                    <li><a href="https://wa.me/573000000000" target="_blank">Portal de Citas WhatsApp</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto & Ubicación</h4>
+                <p>📍 Av. Principal de la Salud #405, Piso 2, Oficina 201</p>
+                <p>📞 (+57) 300 000 0000</p>
+                <p>✉️ contacto@dentiacare.com</p>
+                <p style="margin-top: 1rem;"><strong>Horaries de Atención:</strong><br>Lun - Vie: 8:00 AM - 6:00 PM<br>Sábados: 8:00 AM - 1:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DentiaCare Digital Systems. Todos los derechos reservados. Diseñado para integración con WhatsApp & Meta Business Suite.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-```eof
-
-Todos los textos de la página, incluyendo el título principal de la pestaña, la barra superior, el apartado de políticas y los derechos reservados del final han sido modificados para decir exactamente "Kazandre Fashon Store". ¡Listo para usarse!
